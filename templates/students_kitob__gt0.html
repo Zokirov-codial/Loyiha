@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ega studentlar</title>
+</head>
+<body>
+<h1>Kitobga ega talabalar</h1>
+{% for student in students %}
+    <p>Ism: {{ student.ism }}</p>
+    <p>Kurs: {{ student.kurs }}</p>
+    <p>Guruh: {{ student.guruh }}</p>
+    <p>Kitob: {{ student.kitob_soni }}</p>
+{% endfor %}
+</body>
+</html>

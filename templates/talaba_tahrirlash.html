@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Talaba tahrirlash</title>
+</head>
+<body>
+<h2>{{ talaba.ism }}</h2>
+<form method="post">
+    {% csrf_token %}
+    <label for="ism">Ism:</label>
+    <input type="text" id="ism" name="ism" value="{{ talaba.ism }}" required><br><br>
+
+    <label for="guruh">Guruh:</label>
+    <input type="text" id="guruh" name="guruh" value="{{ talaba.guruh }}" required><br><br>
+
+    <label for="kurs">Kurs:</label>
+    <input type="number" id="kurs" name="kurs" value="{{ talaba.kurs }}" required min="1" max="5"><br><br>
+
+    <label for="kitob_soni">Kitob soni:</label>
+    <input type="number" id="kitob_soni" name="kitob_soni" value="{{ talaba.kitob_soni }}" required><br><br>
+
+    <input type="submit" value="Saqlash">
+</form>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kitoblar</title>
+</head>
+<body>
+<h2>Kiotblar</h2>
+<hr>
+
+<form method="post">
+    {% csrf_token %}
+    <label>Nom: </label>
+    <input type="text" name="nom">
+    <label>Janr: </label>
+    <input type="text" name="janr"> <br> <br>
+    <label>Sahifa: </label>
+    <input type="number" name="sahifa">
+    <label>Muallif: </label>
+    <select name="muallif_id">
+        {% for muallif in mualliflar %}
+        <option value="{{ muallif.id }}">{{ muallif.ism }}</option>
+        {% endfor %}
+    </select>
+    <br> <br>
+    <button>Qo'shish</button>
+</form>
+{% for kitob in Kitoblar %}
+    <p>{{ forloop.counter }}. {{ kitob.ism }}</p>
+{% endfor %}
+</body>
+</html>

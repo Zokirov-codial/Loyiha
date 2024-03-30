@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Muallif</title>
+</head>
+<body>
+<h2>Muallif</h2>
+<hr>
+
+<form method="post">
+    {% csrf_token %}
+    <label>Ism: </label>
+    <input type="text" name="nom">
+    <label>Jins: </label>
+    <input type="text" name="janr"> <br> <br>
+    <label>T-sana: </label>
+    <input type="number" name="sahifa">
+    <label>Kitob soni: </label>
+
+    <button>Qo'shish</button>
+</form>
+{% for kitob in Kitoblar %}
+    <p>{{ forloop.counter }}. {{ kitob.ism }}</p>
+{% endfor %}
+</body>
+</html>
